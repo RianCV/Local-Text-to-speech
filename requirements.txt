@@ -1,0 +1,12 @@
+# Install with:  pip install -r requirements.txt   (Python 3.10–3.12; kokoro doesn't support 3.13 yet)
+# Versions are pinned to the ones this app was built and tested with.
+
+kokoro==0.9.4        # the Kokoro-82M text-to-speech model (pulls in misaki for pronunciation)
+torch==2.14.1        # runs the model (on a Mac, the default build is CPU-friendly; no GPU needed)
+gradio==6.30.0       # the web-page user interface
+numpy==2.5.4         # audio arrays
+soundfile==0.14.0    # writes sample.wav in the smoke test (python tts.py)
+
+# English language model used by misaki to split text into words. Listed here so
+# it's installed up front instead of being downloaded silently on first run.
+en_core_web_sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.8.0/en_core_web_sm-3.8.0-py3-none-any.whl
